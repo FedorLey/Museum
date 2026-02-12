@@ -44,8 +44,28 @@
     }
   }
 
+  &__image {
+    display: block;
+
+    width: 100%;
+    height: 410px;
+
+    object-fit: cover;
+
+    transition: transform $transition-speed $transition-function;
+
+    @include tablet {
+      height: 540px;
+    }
+
+    @include desktop {
+      height: 600px;
+    }
+  }
+
   &__item {
     scroll-snap-align: center;
+    overflow: hidden;
     flex: 0 0 100%;
 
     @include tablet {
@@ -72,20 +92,11 @@
         grid-column: 9 / -1;
       }
     }
-  }
 
-  &__image {
-    display: block;
-    width: 100%;
-    height: 410px;
-    object-fit: cover;
-
-    @include tablet {
-      height: 540px;
-    }
-
-    @include desktop {
-      height: 600px;
+    &:hover {
+      .gallery__image {
+        transform: scale(1.05);
+      }
     }
   }
 
