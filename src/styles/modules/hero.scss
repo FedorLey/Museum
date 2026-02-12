@@ -1,0 +1,144 @@
+@use '../utility/variables' as *;
+@use '../utility/mixins' as *;
+
+.hero {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
+
+  @include tablet {
+    @include page-grid;
+  }
+
+  @include desktop {
+    max-width: $bp-desktop;
+    margin-inline: auto;
+  }
+
+  &__left {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+
+    height: 100%;
+    padding-inline: $padding-mobile;
+
+    @include tablet {
+      grid-column: 1 / 4;
+      gap: 40px;
+      padding-left: $padding-tablet;
+      padding-inline: 0;
+    }
+
+    @include desktop {
+      grid-column: 1 / 6;
+      gap: 80px;
+      padding-left: $padding-desktop;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    margin: 0;
+
+    font-family: $font-title;
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 100%;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include tablet {
+      font-size: 54px;
+      line-height: 120%;
+      text-align: left;
+    }
+
+    @include desktop {
+      font-size: 72px;
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    @include tablet {
+      max-width: 270px;
+    }
+
+    @include desktop {
+      align-self: flex-end;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: rotate(-90deg) translateX(50%);
+
+    display: none;
+    gap: 20px;
+    align-items: center;
+
+    white-space: nowrap;
+
+    @include desktop {
+      display: flex;
+    }
+  }
+
+  &__divider {
+    width: 70px;
+    height: 1px;
+    margin: 0;
+    border: 0;
+
+    background-color: $color-accent;
+  }
+
+  &__category {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 100%;
+    color: $color-label;
+    text-transform: uppercase;
+  }
+
+  &__right {
+    position: relative;
+    width: 100%;
+    height: 300px;
+
+    @include background-img('/src/images/hero-bg.jpg');
+
+    @include tablet {
+      grid-column: 4 / -1;
+      height: 384px;
+    }
+
+    @include desktop {
+      grid-column: 6 / -1;
+      height: 665px;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    left: 0;
+
+    font-size: 30px;
+
+    @include tablet {
+      top: 15px;
+      right: auto;
+      left: 72px;
+      font-size: 36px;
+    }
+  }
+}
