@@ -62,8 +62,8 @@
     @include tablet {
       grid-column: 4 / -1;
       height: 380px;
-      margin-right: -$padding-tablet;
       margin-inline: unset;
+      margin-right: -$padding-tablet;
     }
 
     @include desktop {
