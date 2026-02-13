@@ -10,7 +10,7 @@ export const initGallery = () => {
   const renderDots = () => {
     pagination.innerHTML = '';
 
-    const isTablet = window.matchMedia(`(min-width: 768px)`).matches;
+    const isTablet = window.matchMedia('(min-width: 768px)').matches;
     const dotsCount = isTablet ? Math.ceil(items.length / 2) : items.length;
 
     for (let i = 0; i < dotsCount; i += 1) {
@@ -18,6 +18,10 @@ export const initGallery = () => {
 
       dot.className = 'gallery__dot';
       dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+
+      if (i === 0) {
+        dot.classList.add('gallery__dot--active');
+      }
 
       dot.addEventListener('click', () => {
         const targetIndex = isTablet ? i * 2 : i;
@@ -39,7 +43,7 @@ export const initGallery = () => {
         const dots = pagination.querySelectorAll('.gallery__dot');
         const index = Array.from(items).indexOf(entry.target);
 
-        const isTablet = window.matchMedia(`(min-width: 768px)`).matches;
+        const isTablet = window.matchMedia('(min-width: 768px)').matches;
         const activeDotIndex = isTablet ? Math.floor(index / 2) : index;
 
         dots.forEach((dot) => {

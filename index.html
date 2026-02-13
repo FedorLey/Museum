@@ -24,12 +24,6 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body class="page__body">
-    <header class="navbar">
-      <div class="container">
-        <a href="#menu" class="navbar__button icon icon--hamburger"></a>
-      </div>
-    </header>
-
     <aside class="menu page__menu" id="menu">
       <div class="container menu__container">
         <a href="#!" class="icon icon--close"></a>
@@ -70,24 +64,29 @@
 
     <main class="main">
       <section class="hero">
-        <div class="hero__left">
-          <h1 class="hero__title">Художній<br>музей</h1>
-          <a href="#events" class="button hero__button">
-            <span class="button__label">КВИТКИ</span>
-            <span class="button__box">
-              <div class="icon icon--arrow-right button__icon"></div>
-            </span>
-          </a>
+        <div class="container hero__container">
+          <a href="#menu" class="hero__hamburger icon icon--hamburger"></a>
+          
+          <div class="hero__left">
+            <h1 class="hero__title">Художній<br>музей</h1>
 
-          <div class="hero__label">
-            <hr class="hero__divider">
-            <span class="hero__category">Події</span>
+            <a href="#events" class="button hero__button">
+              <span class="button__label">КВИТКИ</span>
+              <span class="button__box">
+                <div class="icon icon--arrow-right button__icon"></div>
+              </span>
+            </a>
+
+            <div class="hero__label">
+              <hr class="hero__divider">
+              <span class="hero__category">Події</span>
+            </div>
           </div>
-        </div>
-        <div class="hero__right">
-          <a href="#" class="logo hero__logo">
-            NA<br>MU
-          </a>
+          <div class="hero__right">
+            <a href="#" class="logo hero__logo">
+              NA<br>MU
+            </a>
+          </div>
         </div>
       </section>
 
@@ -197,7 +196,7 @@
         <div class="container subscription__container">
           <h2 class="heading subscription__heading">Підписка</h2>
           <p class="subscription__description">Бути в курсі всіх актуальних подій та останніх новин.</p>
-          <form class="subscription__form" action="#">
+          <form class="subscription__form" onsubmit="this.reset(); return false;">
             <input
               type="email"
               class="subscription__input"
