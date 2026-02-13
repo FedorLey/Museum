@@ -63,6 +63,7 @@
       grid-column: 4 / -1;
       height: 380px;
       margin-inline: unset;
+      // stylelint-disable-next-line order/properties-order
       margin-right: -$padding-tablet;
     }
 
